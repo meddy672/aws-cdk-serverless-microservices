@@ -1,6 +1,12 @@
-# Welcome to your CDK TypeScript project
+# ServerlessMicroservice
+This is a microservice for an ecommerce application using the AWS Serverless Services
+![ALT Text](./images/event-driven-microsrvices-image.png)
 
-This is a blank project for CDK development with TypeScript.
+- AWS API Gateway
+- AWS Lambda
+- AWS DynamoDB'
+- AWS SQS
+- AWS Eventbridge
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
