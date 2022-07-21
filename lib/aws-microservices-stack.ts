@@ -25,7 +25,8 @@ export class AwsMicroservicesStack extends Stack {
       bundling: {
         externalModules: [
           'aws-sdk'
-        ]
+        ],
+        minify: true
       },
       environment: {
         PRIMARY_KEY: 'id',
