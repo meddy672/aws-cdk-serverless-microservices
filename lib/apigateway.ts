@@ -3,7 +3,8 @@ import { LambdaRestApi } from 'aws-cdk-lib/aws-apigateway';
 import { IFunction } from 'aws-cdk-lib/aws-lambda';
 
 interface SwnApiGatewayProps {
-    productMicroservice: IFunction
+    productMicroservice: IFunction,
+    basketMicroservice: IFunction
 };
 
 export class SwnApiGateway extends Construct {
@@ -17,13 +18,13 @@ export class SwnApiGateway extends Construct {
             proxy: false
           });
       
-          const product = apigw.root.addResource('product'); // Represents the root resource
-          product.addMethod('GET'); // GET /product/
-          product.addMethod('POST'); // POST /product/
-      
-          const singleProduct = product.addResource('{id}');
-          singleProduct.addMethod('GET'); // GET /product/{id}
-          singleProduct.addMethod('PUT'); // PUT /product/{id}
-          singleProduct.addMethod('DELETE'); // DELETE /product/{id}
+        const product = apigw.root.addResource('product'); // Represents the root resource
+        product.addMethod('GET'); // GET /product/
+        product.addMethod('POST'); // POST /product/
+    
+        const singleProduct = product.addResource('{id}');
+        singleProduct.addMethod('GET'); // GET /product/{id}
+        singleProduct.addMethod('PUT'); // PUT /product/{id}
+        singleProduct.addMethod('DELETE'); // DELETE /product/{id}
     }
 }
