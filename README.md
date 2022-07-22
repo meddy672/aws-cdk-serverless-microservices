@@ -1,4 +1,5 @@
-# ServerlessMicroservice
+# AWS CDK Serverless Microservice
+> WIP
 This is a sample of an ecommerce backend microservices built with the [AWS CDK](https://docs.aws.amazon.com/cdk/api/v1/docs/aws-construct-library.html) using AWS Serverless Services.
 ![ALT Text](./images/event-driven-microsrvices-image.png)
 
@@ -32,7 +33,7 @@ cdk deploy
 
     1. Product API -> [https://xxx.execute-api.ap-southeast-1.amazonaws.com/prod/product]()
     2. Basket API -> [https://xxx.execute-api.ap-southeast-1.amazonaws.com/prod/basket]()
-    3. Ordering API -> [https://xxx.execute-api.ap-southeast-1.amazonaws.com/prod/order]
+    3. Ordering API -> [https://xxx.execute-api.ap-southeast-1.amazonaws.com/prod/order]()
 
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
