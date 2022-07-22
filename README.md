@@ -5,7 +5,7 @@ This is a sample of an ecommerce backend microservices built with the [AWS CDK](
 ## AWS Services
 - AWS API Gateway
 - AWS Lambda
-- AWS DynamoDB'
+- AWS DynamoDB
 - AWS SQS
 - AWS Eventbridge
 
