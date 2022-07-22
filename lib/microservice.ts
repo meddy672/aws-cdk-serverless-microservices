@@ -36,6 +36,6 @@ export class SwnMicroservices extends Construct {
       
           props.productTable.grantReadWriteData(productFunction);
 
-          this.productMicroservice = productFunction
+          this.productMicroservice = productFunction;
     }
 }
