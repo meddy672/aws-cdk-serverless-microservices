@@ -20,7 +20,8 @@ export class AwsMicroservicesStack extends Stack {
 
     const apigateway = new SwnApiGateway(this, 'ApiGateway', {
       productMicroservice: microservices.productMicroservice,
-      basketMicroservice: microservices.basketMicroservice
+      basketMicroservice: microservices.basketMicroservice,
+      orderNMicroservice: microservices.orderMicroservice
     });
 
     const eventbus = new SwnEventBus(this, 'EventBus', {

@@ -4,7 +4,8 @@ import { IFunction } from 'aws-cdk-lib/aws-lambda';
 
 interface SwnApiGatewayProps {
     productMicroservice: IFunction,
-    basketMicroservice: IFunction
+    basketMicroservice: IFunction,
+    orderNMicroservice: IFunction
 };
 
 export class SwnApiGateway extends Construct {
@@ -13,6 +14,7 @@ export class SwnApiGateway extends Construct {
         super(scope, id);
         this.createProductApi(props.productMicroservice);
         this.createBasketApi(props.basketMicroservice);
+        this.createOrderApi(props.orderNMicroservice);
     }
 
     private createProductApi(productMicroservice: IFunction) {
@@ -51,5 +53,22 @@ export class SwnApiGateway extends Construct {
 
         const basketCheckout = basket.addResource('checkout');
         basketCheckout.addMethod('POST');
+    }
+
+    private createOrderApi(orderMicroservice: IFunction) {
+
+        const apigw = new LambdaRestApi(this, 'orderApi', {
+            restApiName: 'Order Service',
+            handler: orderMicroservice,
+            proxy: false
+        });
+
+        const order = apigw.root.addResource('order');
+        order.addMethod('GET'); // GET /order
+
+        const singleOrder = order.addResource('{userName}');
+        singleOrder.addMethod('GET'); // GET /order/{userName}
+
+        return singleOrder;
     }
 }
