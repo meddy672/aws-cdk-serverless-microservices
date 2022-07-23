@@ -1,19 +1,22 @@
 > WIP
 # AWS CDK Serverless Microservice
 This is a sample of an ecommerce backend RESTful microservices built with the [AWS CDK](https://docs.aws.amazon.com/cdk/api/v1/docs/aws-construct-library.html) using AWS Serverless Services.
-![ALT Text](./images/event-driven-microsrvices-image.png)
+![ALT Text](./images/Screenshot%202022-07-23%20091133.png)
 
 ## AWS Services
-- AWS API Gateway
-- AWS Lambda
-- AWS DynamoDB
-- AWS SQS
-- AWS Eventbridge
+- AWS API Gateway (client request)
+- AWS Lambda (compute)
+- AWS DynamoDB (storage)
+- AWS SQS (integration)
+- AWS Eventbridge (application integration)
 
 ## Ecommerce Microservices
-1. Product Service
-2. Basket Service
-3. Ordering Service
+1. Product Service - sync
+2. Basket Service - sync & async publisher
+3. Ordering Service - sync & async subscriber
+
+## How It Works
+
 
 ## Required Software
 1. Node.js
