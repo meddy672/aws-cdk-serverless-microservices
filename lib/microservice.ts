@@ -93,7 +93,7 @@ export class SwnMicroservices extends Construct {
         };
 
         const orderFunctiuon = new NodejsFunction(this, 'orderingLambdaFunction', {
-            entry: join(__dirname, `../../src/ordering/index.js`),
+            entry: join(__dirname, `/../src/ordering/index.js`),
             ...orderingFunctionProps
         });
 
