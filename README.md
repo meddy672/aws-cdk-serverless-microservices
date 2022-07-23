@@ -1,6 +1,6 @@
 > WIP
 # AWS CDK Serverless Microservice
-This is a sample of an ecommerce backend microservices built with the [AWS CDK](https://docs.aws.amazon.com/cdk/api/v1/docs/aws-construct-library.html) using AWS Serverless Services.
+This is a sample of an ecommerce backend RESTful microservices built with the [AWS CDK](https://docs.aws.amazon.com/cdk/api/v1/docs/aws-construct-library.html) using AWS Serverless Services.
 ![ALT Text](./images/event-driven-microsrvices-image.png)
 
 ## AWS Services

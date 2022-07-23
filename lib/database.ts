@@ -28,7 +28,7 @@ export class SwnDatabase extends Construct {
     private createBasketTable(): ITable {
         return new Table(this, 'basket', {
             partitionKey: {
-              name: 'username',
+              name: 'userName',
               type: AttributeType.STRING
             },
             tableName: 'basket',
