@@ -1,7 +1,6 @@
-import { ddbClient } from './ddbClient';
 import { marshall, unmarshall } from "@aws-sdk/util-dynamodb";
-import { ddbClient } from './ddbClient';
 import { PutItemCommand, QueryCommand } from "@aws-sdk/client-dynamodb";
+import { ddbClient } from './ddbClient';
 
 
 
