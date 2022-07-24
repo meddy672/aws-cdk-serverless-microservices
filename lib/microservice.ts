@@ -39,7 +39,7 @@ export class SwnMicroservices extends Construct {
             runtime: Runtime.NODEJS_14_X
           }
       
-          const productFunction = new NodejsFunction(this, 'productLambdaFunction', {
+          const productFunction = new NodejsFunction(this, 'ProductLambdaFunction', {
             entry: join(__dirname, `/../src/product/index.js`),
             ...productFunctionProps
           });
@@ -68,7 +68,7 @@ export class SwnMicroservices extends Construct {
             runtime: Runtime.NODEJS_14_X
         };
 
-        const basketFunction = new NodejsFunction(this, 'basketLambdaFunction', {
+        const basketFunction = new NodejsFunction(this, 'BasketLambdaFunction', {
             entry: join(__dirname, `/../src/basket/index.js`),
             ...basketFunctionProps
         });
@@ -95,7 +95,7 @@ export class SwnMicroservices extends Construct {
             runtime: Runtime.NODEJS_14_X
         };
 
-        const orderFunctiuon = new NodejsFunction(this, 'orderingLambdaFunction', {
+        const orderFunctiuon = new NodejsFunction(this, 'OrderingLambdaFunction', {
             entry: join(__dirname, `/../src/ordering/index.js`),
             ...orderingFunctionProps
         });
