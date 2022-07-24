@@ -4,6 +4,7 @@ import { SwnApiGateway } from './apigateway';
 import { SwnDatabase } from './database';
 import { SwnEventBus } from './eventbus';
 import { SwnMicroservices } from './microservice';
+import { SwnQueue } from './queue';
 
 
 export class AwsMicroservicesStack extends Stack {
@@ -24,9 +25,13 @@ export class AwsMicroservicesStack extends Stack {
       orderNMicroservice: microservices.orderMicroservice
     });
 
+    const queue = new SwnQueue(this, 'Queue', {
+      consumer: microservices.orderMicroservice
+    });
+
     const eventbus = new SwnEventBus(this, 'EventBus', {
       publisherFunction: microservices.basketMicroservice,
-      targetFunction: microservices.orderMicroservice
-    })
+      targetQueue: queue.orderQueue
+    });
   }
 }
