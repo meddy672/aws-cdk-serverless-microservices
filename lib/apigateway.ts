@@ -19,7 +19,7 @@ export class SwnApiGateway extends Construct {
 
     private createProductApi(productMicroservice: IFunction) {
 
-        const apigw  = new LambdaRestApi(this, 'productApi', {
+        const apigw  = new LambdaRestApi(this, 'ProductApi', {
             restApiName: 'Product Service',
             handler: productMicroservice,
             proxy: false
@@ -37,7 +37,7 @@ export class SwnApiGateway extends Construct {
 
     private createBasketApi(basketMicroservice: IFunction) {
 
-        const apigw = new LambdaRestApi(this, 'basketApi', {
+        const apigw = new LambdaRestApi(this, 'BasketApi', {
             restApiName: 'Basket Service',
             handler: basketMicroservice,
             proxy: false
@@ -57,7 +57,7 @@ export class SwnApiGateway extends Construct {
 
     private createOrderApi(orderMicroservice: IFunction) {
 
-        const apigw = new LambdaRestApi(this, 'orderApi', {
+        const apigw = new LambdaRestApi(this, 'OrderApi', {
             restApiName: 'Order Service',
             handler: orderMicroservice,
             proxy: false

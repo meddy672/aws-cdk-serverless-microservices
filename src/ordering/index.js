@@ -7,15 +7,17 @@ import { ddbClient } from './ddbClient';
 exports.handler = async (event) => {
     console.log("request:", JSON.stringify(event, undefined, 2));
 
-    // TODO: Catch and process async innvocation from eventbridge and sync innnocation from apigateway
-    const eventType = event['detail-type'];
-    if (eventType !== undefined) {
+    if(event.Records != null) {
+        // SQS Invocation
+        await sqsInvocation(event);
+      }
+      else if (event['detail-type'] !== undefined) {
+        // EventBridge Invocation
         await eventbridgeInnvocation(event);
-    } else {
-        return apiGatewayInnvocation(event);
-
-    }
-
+      } else {
+        // API Gateway Invocation -- return sync response
+        return await apiGatewayInnvocation(event);
+      }
 }
 
 const eventbridgeInnvocation = async (event) => {
@@ -24,6 +26,21 @@ const eventbridgeInnvocation = async (event) => {
     await createOrder(event.detail);
 
 }
+
+const sqsInvocation = async (event) => {
+    console.log(`sqsInvocation function. event : "${event}"`);
+    
+    event.Records.forEach(async (record) => {
+      console.log('Record: %j', record);
+      
+      // expected request : { "detail-type\":\"CheckoutBasket\",\"source\":\"com.swn.basket.checkoutbasket\", "detail\":{\"userName\":\"swn\",\"totalPrice\":1820, .. }
+      const checkoutEventRequest = JSON.parse(record.body); 
+      
+      // create order item into db
+      await createOrder(checkoutEventRequest.detail); 
+      // detail object should be checkoutbasket json object
+    });
+  }
 
 const createOrder = async (basketCheckoutEvent) => {
     try {
