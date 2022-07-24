@@ -90,7 +90,7 @@ const apiGatewayInnvocation = async (event) => {
 }
 
 const getOrder = async (event) => {
-    console.log("getOrde");
+    console.log("getOrder");
 
     try {
         const userName = event.pathParameters.userName;
@@ -100,7 +100,7 @@ const getOrder = async (event) => {
             KeyConditionExpression: "userName = :userName and orderDate = :orderDate",
             ExpressionAttributeValues: {
                 ":userName": { S: userName},
-                ":orderODate": { S: orderDate }
+                ":orderDate": { S: orderDate }
             },
             TableName: process.env.DYNAMODB_TABLE_NAME
         }
