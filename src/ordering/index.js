@@ -35,7 +35,7 @@ const createOrder = async (basketCheckoutEvent) => {
         console.log(basketCheckoutEvent);
 
         const params = {
-            TableName: process.env.DYNAMO_TABLE_NAME,
+            TableName: process.env.DYNAMODB_TABLE_NAME,
             Item: marshall(basketCheckoutEvent || {})
         };
 
