@@ -102,7 +102,7 @@ const getOrder = async (event) => {
                 ":userName": { S: userName},
                 ":orderODate": { S: orderDate }
             },
-            TableName: process.env.DYNAMO_TABLE_NAME
+            TableName: process.env.DYNAMODB_TABLE_NAME
         }
 
         const { Items } = await ddbClient.send(new QueryCommand(params));
