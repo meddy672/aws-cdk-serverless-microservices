@@ -16,12 +16,7 @@ Within the `lib` directory the **aws-microservice-stack.ts** contains all the cu
 2. databases.ts - provisions each database for each microservice
 3. microservices.ts - proviosns each lambda function needed for each service
 
-Each service has its own **api gateway**, **lambda function** and **database**. The lambda functions can handle different http request sent by its respective api and process logic accordingly. The logic for each of the three lambda functions is stored in the `src` directory:
-1. */basket*
-2. */ordering*
-3. */product*
-
-Each of the three directories have their own database client, i.e. `ddbClient.js` for database communication, and `package.json` file to install needed dependencies. In addition, the *basket* directory also contains an eventbridge client to send asynchronous request to the eventbridge. The basket microservice publishes events to the eventbridge and the ordering microservice subscribes to those events via an SQS Queue. The event received from the queue contains a payload with context of the basket and stores it as an order.
+Each service has its own **api gateway**, **lambda function** and **database**. The lambda functions can handle different http request sent by its respective api and process logic accordingly. The logic for each of the three lambda functions is stored in the `src` directory: *1. /basket*, *2. /ordering* *3. /product*.Each of the three directories have their own database client, i.e. `ddbClient.js` for database communication, and `package.json` file to install needed dependencies. In addition, the *basket* directory also contains an eventbridge client to send asynchronous request to the eventbridge. The basket microservice publishes events to the eventbridge and the ordering microservice subscribes to those events via an SQS Queue. The event received from the queue contains a payload with context of the basket and stores it as an order.
 
 
 ## Required Software
