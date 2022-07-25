@@ -27,8 +27,13 @@ Each service has its own **api gateway**, **lambda function** and **database**. 
 5. Docker
 
 ## Getting Started
+> Make sure you have installed all Required Software
 1. Clone the repository
 2. At the root directory which include cdk.json files, run below command:
+```sh
+cdk synth # To synthesize into cloudformation template
+```
+next run the the command below:
 ```
 cdk deploy
 ```
