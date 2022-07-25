@@ -10,11 +10,6 @@ This is a sample of an ecommerce backend RESTful microservices built with the [A
 - AWS SQS (integration)
 - AWS Eventbridge (application integration)
 
-## Ecommerce Microservices
-1. Product Service - sync
-2. Basket Service - sync & async publisher
-3. Ordering Service - sync & async subscriber
-
 ## Overview
 Within the `lib` directory the **aws-microservice-stack.ts** contains all the custom constructs to be provsioned on the AWS Platform.
 1. apigateway.ts - provisions each api needed for each microservice
