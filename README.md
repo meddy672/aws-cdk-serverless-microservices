@@ -23,7 +23,6 @@ Each service has its own **api gateway**, **lambda function** and **database**. 
 2. AWS Account
 3. AWS CLI
 4. AWS CDK
-5. Docker
 
 ## Getting Started
 > Make sure you have installed all Required Software
